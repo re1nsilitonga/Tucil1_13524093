@@ -185,4 +185,4 @@ tucil1_queens/
 ---
 
 **Tugas Kecil 1 - IF2211 Strategi Algoritma**  
-Semester II Tahun 2024/2025
+Semester Genap Tahun 2025/2026
