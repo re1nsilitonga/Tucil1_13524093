@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="root" spacing="0" style="-fx-background-color: #121d33;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+    <Button fx:id="homeButton" alignment="TOP_LEFT" maxWidth="Infinity" style="-fx-font-size: 14px; -fx-padding: 10px 20px; -fx-background-color: #121d33; -fx-text-fill: #f39c12; -fx-background-radius: 0; -fx-font-weight: Bold;" text="← Back to Home">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Button>
+    
+<ScrollPane fitToWidth="true" style="-fx-background: #121d33; -fx-background-color: #121d33;" VBox.vgrow="ALWAYS">
+<VBox spacing="15" style="-fx-background-color: #121d33;">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <VBox layoutX="30.0" layoutY="187.0" maxWidth="1.7976931348623157E308" spacing="5">
+        <padding>
+            <Insets top="10" />
+        </padding>
+        <children>
+         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" style="-fx-text-fill: #f39c12; -fx-font-weight: bold;" text="Queens">
+            <font>
+               <Font name="System Bold" size="40.0" />
+            </font>
+         </Label>
+         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="24.0" prefWidth="999.0" style="-fx-text-fill: #f39c12; -fx-font-weight: bold;" text="Solver ">
+            <font>
+               <Font name="System Bold" size="30.0" />
+            </font>
+         </Label>
+        </children>
+    </VBox>
+
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Button fx:id="loadButton" style="-fx-font-size: 14px; -fx-padding: 10px 20px; -fx-background-color: #000000; -fx-text-fill: white; -fx-background-radius: 20; -fx-border-color: #f39c12; -fx-border-radius: 20;" text="Load File" />
+        <Button fx:id="solveButton" disable="true" style="-fx-font-size: 14px; -fx-padding: 10px 20px; -fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 20;" text="Solve" />
+        <Button fx:id="saveButton" disable="true" style="-fx-font-size: 14px; -fx-padding: 10px 20px; -fx-background-color: #000000; -fx-text-fill: white; -fx-background-radius: 20; -fx-border-color: #f39c12; -fx-border-radius: 20;" text="Save Image" />
+        <CheckBox fx:id="visualizeCheckBox" selected="false" style="-fx-font-size: 13px; -fx-text-fill: white;" text="Enable Live Visualization" />
+        <CheckBox fx:id="visualizeCheckBox1" layoutX="334.0" layoutY="20.0" selected="false" style="-fx-font-size: 13px; -fx-text-fill: white;" text="Enable Optimation" />
+    </HBox>
+
+    <VBox spacing="5">
+        <padding>
+            <Insets top="10" />
+        </padding>
+        <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #f39c12;" text="Visualization Interval:" />
+        <Slider fx:id="visualizationSlider" majorTickUnit="1" max="4" min="0" minorTickCount="0" prefWidth="400" showTickLabels="true" showTickMarks="true" snapToTicks="true" style="-fx-control-inner-background: #121d33;" value="2" />
+        <Label fx:id="visualizationLabel" style="-fx-font-size: 11px; -fx-text-fill: #bdc3c7;" text="Every 100 iterations" />
+    </VBox>
+
+    <HBox alignment="TOP_CENTER" spacing="15">
+        <VBox spacing="10" style="-fx-background-color: #1a2a44; -fx-padding: 15px; -fx-border-color: #f39c12; -fx-border-width: 2px; -fx-background-radius: 10; -fx-border-radius: 10;" HBox.hgrow="ALWAYS">
+            <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;" text="Input Board:" />
+            <ImageView fx:id="inputImageView" fitHeight="400" fitWidth="400" preserveRatio="true" style="-fx-background-color: #0d1626;" />
+        </VBox>
+
+        <VBox spacing="10" style="-fx-background-color: #1a2a44; -fx-padding: 15px; -fx-border-color: #f39c12; -fx-border-width: 2px; -fx-background-radius: 10; -fx-border-radius: 10;" HBox.hgrow="ALWAYS">
+            <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;" text="Solution:" />
+            <TextArea fx:id="solutionTextDisplay" editable="false" prefColumnCount="15" prefRowCount="10" style="-fx-control-inner-background: #0d1626; -fx-text-fill: #2ecc71; -fx-font-family: 'Courier New'; -fx-font-size: 18px; -fx-border-color: transparent;" visible="true" VBox.vgrow="ALWAYS" />
+            <ImageView fx:id="outputImageView" fitHeight="400" fitWidth="400" preserveRatio="true" style="-fx-background-color: #0d1626;" visible="false" />
+        </VBox>
+    </HBox>
+
+    <ProgressBar fx:id="progressBar" maxWidth="999" prefWidth="999" progress="0" style="-fx-accent: #f39c12;" visible="false" />
+
+    <Label fx:id="statsLabel" maxWidth="1.7976931348623157E308" prefHeight="80" style="-fx-font-size: 13px; -fx-text-fill: #bdc3c7; -fx-padding: 10px; -fx-background-color: #0d1626; -fx-border-color: #f39c12; -fx-border-width: 1px; -fx-background-radius: 5; -fx-border-radius: 5;" text="" />
+</VBox>
+</ScrollPane>
+</VBox>

@@ -1,0 +1,15 @@
+com\app\model\QueensBrute.class
+com\app\model\PositionList.class
+com\app\controller\QueensController.class
+com\app\model\QueensOptimation.class
+com\app\QueensSolverApp.class
+com\app\model\ColorMap.class
+com\app\view\QueensImage.class
+com\app\model\IOfiles.class
+com\app\view\QueensMain.class
+com\app\view\QueensView.class
+com\app\model\ImageProcessor.class
+com\app\controller\QueensImageController$1.class
+com\app\model\ColorMap$MapEntry.class
+com\app\controller\QueensImageController.class
+com\app\controller\QueensController$1.class
